@@ -1,7 +1,7 @@
-# Личный проект «Седона» 
+# Личный проект «Седона»
 
-* Студент: [Дмитрий Никонов](https://up.htmlacademy.ru/adaptive/22/user/1402655).
-* Наставник: [Елизавета Цыгвинцева](https://htmlacademy.ru/profile/ijwby).
+- Студент: [Дмитрий Никонов](https://up.htmlacademy.ru/adaptive/22/user/1402655).
+- Наставник: [Елизавета Цыгвинцева](https://htmlacademy.ru/profile/ijwby).
 
 ---
 

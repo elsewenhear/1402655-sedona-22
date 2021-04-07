@@ -1,0 +1,39 @@
+.main-navigation {
+  outline: 1px solid red;
+  position: relative;
+  order: -1;
+  width: 100%;
+}
+
+.main-navigation__toggle {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  border: none;
+  width: 23px;
+  height: 23px;
+  background: transparent url("../img/svg/icon-cross.svg") no-repeat;
+  outline: 2px solid green;
+}
+
+.main-navigation__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  position: relative;
+}
+
+.main-navigation__item {
+  background: @pale-blue;
+  box-shadow: @shadow-menu;
+}
+
+.main-navigation__link {
+  display: block;
+  color: @white;
+  padding: 8px 0;
+  font-size: 18px;
+  line-height: 40px;
+  text-decoration: none;
+}

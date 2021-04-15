@@ -5,14 +5,52 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -35px;
-  outline: 1px solid red;
 
   &--small {
     width: 100%;
     min-height: 158px;
     background: @pale-blue url("../img/picture/back-1.jpeg") bottom;
     background-size: cover;
-    outline: 1px solid red;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .intro {
+    min-height: 518px;
+    margin-top: 0;
+    background: @pale-blue url("../img/picture/back-2.jpeg");
+    background-size: cover;
+
+    .intro__slogan {
+      width: 461px;
+      height: 350px;
+    }
+
+    &--small {
+      min-height: 290px;
+      background: @pale-blue url("../img/picture/back-2.jpeg") bottom;
+
+      .intro__slogan {
+        width: 456px;
+        height: 77px;
+      }
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .intro {
+    background: @pale-blue url("../img/picture/back-3.png");
+    background-size: cover;
+
+    &--small {
+      min-height: 290px;
+      background: @pale-blue url("../img/picture/back-3.png") bottom;
+
+      .intro__slogan {
+        width: 459px;
+        height: 79px;
+      }
+    }
   }
 }

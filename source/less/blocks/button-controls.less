@@ -1,3 +1,8 @@
+.button-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .button-controls__item {
   width: 16px;
   height: 20px;
@@ -6,17 +11,19 @@
   background-color: transparent;
 
   &--repeat {
+    margin-right: auto;
     background: transparent url("../img/svg/replay.svg") no-repeat;
-    margin-right: 14px;
   }
 
   &--subtitles {
     background: transparent url("../img/svg/subtitles.svg") no-repeat;
-    margin-right: 14px;
+    width: 32px;
+    height: 20px;
   }
 
   &--fullscreen {
     background: transparent url("../img/svg/fullscreen.svg") no-repeat;
-    margin-right: 14px;
+    width: 20px;
+    height: 20px;
   }
 }

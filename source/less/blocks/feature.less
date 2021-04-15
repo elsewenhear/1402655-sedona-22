@@ -1,20 +1,92 @@
 .feature {
-  padding: 35px 21px 35px 70px;
-
+  list-style: none;
+  padding: 35px 21px 35px 71px;
   text-align: left;
+}
+
+.feature__item {
+  &::before {
+    display: block;
+    content: "";
+    background-size: cover;
+    transform: translate(-55px, 50px);
+  }
 
   &--house {
-    background-repeat: no-repeat;
-    background-image: url("../img/svg/icon-house.svg");
+    &::before {
+      width: 39px;
+      height: 37px;
+      background: url("../img/svg/icon-house.svg") no-repeat;
+    }
   }
 
   &--souvenir {
-    background-repeat: no-repeat;
-    background-image: url("../img/svg/icon-gift.svg");
+    &::before {
+      width: 32px;
+      height: 38px;
+      background: url("../img/svg/icon-gift.svg") no-repeat;
+    }
   }
 
   &--food {
-    background-repeat: no-repeat;
-    background-image: url("../img/svg/icon-burger.svg");
+    &::before {
+      width: 40px;
+      height: 35px;
+      background: url("../img/svg/icon-burger.svg") no-repeat;
+    }
+  }
+}
+
+.feature__title {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+@media (min-width: @tablet-width) {
+  .feature {
+    text-align: center;
+    padding: 60px 36px;
+    grid-column-gap: 73px;
+  }
+
+  .feature__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::before {
+      transform: none;
+      background-size: cover;
+    }
+
+    &--house {
+      &::before {
+        width: 76px;
+        height: 72px;
+      }
+    }
+
+    &--souvenir {
+      order: 3;
+
+      &::before {
+        width: 64px;
+        height: 75px;
+      }
+    }
+
+    &--food {
+      &::before {
+        width: 76px;
+        height: 67px;
+      }
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .feature {
+    padding: 60px 58px;
+    grid-column-gap: 104px;
   }
 }

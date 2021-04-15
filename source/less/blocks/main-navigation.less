@@ -1,19 +1,12 @@
-.main-navigation {
-  outline: 1px solid red;
-  position: relative;
-  order: -1;
-  width: 100%;
-}
-
 .main-navigation__toggle {
   position: absolute;
   right: 20px;
-  top: 17px;
+  top: 15px;
+  outline: none;
   border: none;
   width: 23px;
   height: 23px;
   background: transparent url("../img/svg/icon-cross.svg") no-repeat;
-  outline: 2px solid green;
 }
 
 .main-navigation__list {
@@ -36,4 +29,28 @@
   font-size: 18px;
   line-height: 40px;
   text-decoration: none;
+}
+
+@media (min-width: @tablet-width) {
+  .main-navigation__list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .main-navigation__toggle {
+    display: none;
+  }
+
+  .main-navigation__link {
+    color: @black;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+    padding: 0;
+  }
+
+  .main-navigation__item {
+    background: transparent;
+    box-shadow: none;
+  }
 }

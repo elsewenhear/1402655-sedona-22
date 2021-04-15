@@ -12,3 +12,21 @@
   text-decoration: none;
   margin-bottom: 35px;
 }
+
+@media (min-width: @tablet-width) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer__link {
+    margin: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .footer {
+    padding: 0 120px;
+  }
+}

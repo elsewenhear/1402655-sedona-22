@@ -1,33 +1,179 @@
-.form {
+.form__wrapper {
   display: flex;
   flex-direction: column;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
 }
 
 .form__fieldset {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   padding: 20px 20px 30px;
   border: none;
+  margin: 0;
   border-top: 1px solid @grey-two;
+
+  @media (min-width: @tablet-width) {
+    width: 100%;
+    border-top: none;
+    margin-top: 50px;
+    padding: 0;
+  }
+}
+
+.form__fieldset--contacts {
+  .form__label {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .form__label-text {
+    margin-left: 20px;
+  }
+
+  @media (min-width: @desktop-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .form__legend {
+      width: 100%;
+    }
+
+    .form__label {
+      flex-wrap: nowrap;
+    }
+
+    .form__label + .form__label {
+      margin-top: 0;
+    }
+
+    .form__label-text {
+      white-space: nowrap;
+    }
+  }
+}
+
+.form__fieldset--impressions {
+  @media (min-width: @tablet-width) {
+    order: -2;
+    width: 50%;
+    padding-right: 30px;
+    border-right: 1px solid @grey-four;
+
+    .form__legend {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .form__legend {
+      justify-content: center;
+    }
+  }
+}
+
+.form__fieldset--fio {
+  @media (min-width: @tablet-width) {
+    width: 50%;
+    padding-left: 30px;
+
+    .form__legend {
+      text-align: left;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.form__fieldset--showplaces {
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    .form__legend {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+
+    .form__label + .form__label {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .form__legend {
   width: 100%;
   margin-top: 0;
+
   font-size: 18px;
   line-height: 26px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    &::before,
+    &::after {
+      display: inline-block;
+      height: 1px;
+      flex-grow: 1;
+      background-color: @grey-four;
+      content: "";
+    }
+
+    &::before {
+      margin-right: 30px;
+    }
+
+    &::after {
+      margin-left: 30px;
+    }
+  }
+}
+
+.form__label {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.form__label + .form__label {
+  margin-top: 20px;
 }
 
 .form__label-text {
+  flex-grow: 1;
+  margin-right: 10px;
   font-size: 14px;
   line-height: 26px;
   text-transform: uppercase;
 
   &--radio,
   &--checkbox {
+    margin-left: 30px;
+
     font-size: 18px;
     line-height: 26px;
     font-weight: 700;
@@ -37,7 +183,7 @@
 
 .form__input-text,
 .form__textarea {
-  display: inline-block;
+  width: 100%;
   box-sizing: border-box;
   border: none;
   padding: 15px;
@@ -47,29 +193,58 @@
   font-weight: 700;
 
   background-color: @grey-three;
+
+  &--phone {
+    background: @grey-three url("../img/svg/phone.svg") no-repeat right;
+  }
+
+  &--email {
+    background: @grey-three url("../img/svg/mail.svg") no-repeat right;
+  }
+
+  &::placeholder {
+    color: @black;
+  }
 }
 
 .form__textarea {
-  padding: 13px 23px 29px 21px;
-  border: none;
-  outline: none;
-  margin-bottom: 50px;
-  width: 100%;
-  box-sizing: border-box;
-  resize: none;
+  min-height: 160px;
+  font-family: inherit;
 }
 
 .form__button-submit {
   width: calc(100% - 2 * 20px);
-  margin: 50px 20px;
+  margin: 30px 20px 50px;
   padding: 15px;
   border: none;
 
   font-size: 21px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: bold;
   color: @white;
   text-align: center;
 
   background-color: @pale-blue;
+
+  @media (min-width: @tablet-width) {
+    display: inline-block;
+    margin: 50px 0;
+    width: 50%;
+  }
+}
+
+.form__note {
+  display: none;
+
+  @media (min-width: @tablet-width) {
+    display: inline-block;
+    margin: 50px 0;
+    width: 50%;
+
+    font-size: 14px;
+    line-height: 26px;
+    align-self: center;
+    text-align: right;
+    text-transform: uppercase;
+  }
 }

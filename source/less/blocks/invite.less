@@ -1,6 +1,5 @@
 .invite {
   padding: 36px 20px 16px;
-  outline: 1px solid red;
   text-align: center;
   text-transform: uppercase;
 }
@@ -11,9 +10,19 @@
   font-size: 18px;
   line-height: 26px;
   font-weight: 700;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 100px;
+  }
 }
 
 .invite__text {
   font-size: 14px;
   line-height: 24px;
+
+  @media (min-width: @tablet-width) {
+    width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
